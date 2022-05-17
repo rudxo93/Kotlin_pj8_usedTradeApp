@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/android_workspace/usedTradeApp/app/src/main/res/drawable/ic_baseline_chat.xml" value="0.31" />
         <entry key="..\:/android_workspace/usedTradeApp/app/src/main/res/drawable/ic_baseline_home.xml" value="0.31" />
         <entry key="..\:/android_workspace/usedTradeApp/app/src/main/res/drawable/ic_baseline_info_24.xml" value="0.31" />
+        <entry key="..\:/android_workspace/usedTradeApp/app/src/main/res/drawable/selector_menu_color.xml" value="0.31" />
         <entry key="..\:/android_workspace/usedTradeApp/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/android_workspace/usedTradeApp/app/src/main/res/menu/bottom_navi_manu.xml" value="0.36614583333333334" />
       </map>
