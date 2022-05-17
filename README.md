@@ -1,0 +1,1 @@
+# Kotlin_pj8_usedTradeApp
