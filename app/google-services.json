@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "287839731517",
+    "project_id": "usedtradeapp-49ad2",
+    "storage_bucket": "usedtradeapp-49ad2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:287839731517:android:a28c0a39d281bc999b4f54",
+        "android_client_info": {
+          "package_name": "com.duran.usedtradeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "287839731517-csban1c8th8hsc4ns8evvc2dv6bvspli.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBB5hdgqAUQ7tMVTvs2wyJ-XCx46MtpAs8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "287839731517-csban1c8th8hsc4ns8evvc2dv6bvspli.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
