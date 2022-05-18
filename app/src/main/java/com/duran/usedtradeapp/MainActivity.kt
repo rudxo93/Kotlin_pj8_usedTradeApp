@@ -3,6 +3,9 @@ package com.duran.usedtradeapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.duran.usedtradeapp.chatting.ChattingFragment
+import com.duran.usedtradeapp.home.HomeFragment
+import com.duran.usedtradeapp.myPage.MyPageFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
