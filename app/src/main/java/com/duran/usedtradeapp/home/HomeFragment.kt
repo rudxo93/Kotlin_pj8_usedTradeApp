@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.duran.usedtradeapp.DBkey.Companion.DB_ARTICLES
 import com.duran.usedtradeapp.R
 import com.duran.usedtradeapp.databinding.FragmentHomeBinding
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.ChildEventListener
@@ -71,8 +72,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         fragmentHomeBinding.articleRecyclerView.adapter = articleAdapter
         fragmentHomeBinding.addFloatingBtn.setOnClickListener {
             context?.let {
-                val intent = Intent(it, AddActicleActivity::class.java)
-                startActivity(intent)
+                 //if(auth.currentUser != null) {
+                     val intent = Intent(it, AddArticleActivity::class.java)
+                     startActivity(intent)
+                 //} else {
+                     Snackbar.make(view, "로그인 후 사용해주세요", Snackbar.LENGTH_LONG).show()
+                 //}
             }
         }
 

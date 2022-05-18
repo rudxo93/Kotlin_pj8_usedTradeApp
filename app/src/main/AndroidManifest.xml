@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".home.AddActicleActivity"
+            android:name=".home.AddArticleActivity"
             android:exported="false" />
     </application>
 
