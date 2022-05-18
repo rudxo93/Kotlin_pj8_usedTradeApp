@@ -1,5 +1,6 @@
 package com.duran.usedtradeapp.home
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -54,6 +55,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         Log.d("sslee", "onViewCreated")
 
         val fragmentHomeBinding = FragmentHomeBinding.bind(view)
+        articleList.clear()
         binding = fragmentHomeBinding
 
         articleDB = Firebase.database.reference.child(DB_ARTICLES)
@@ -76,6 +78,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         articleDB.removeEventListener(listener)
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onResume() {
         super.onResume()
         articleAdapter.notifyDataSetChanged() // view를 다시 그린다.
