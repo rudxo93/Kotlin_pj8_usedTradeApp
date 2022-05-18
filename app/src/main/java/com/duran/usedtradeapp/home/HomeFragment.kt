@@ -1,6 +1,7 @@
 package com.duran.usedtradeapp.home
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -68,6 +69,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         // 그러나 프레그먼트의 경우 아래와같이 context
         fragmentHomeBinding.articleRecyclerView.layoutManager = LinearLayoutManager(context)
         fragmentHomeBinding.articleRecyclerView.adapter = articleAdapter
+        fragmentHomeBinding.addFloatingBtn.setOnClickListener {
+            context?.let {
+                val intent = Intent(it, AddActicleActivity::class.java)
+                startActivity(intent)
+            }
+        }
 
         // 데이터 가져오기
         articleDB.addChildEventListener(listener)
