@@ -27,67 +27,67 @@
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <View
+        android:id="@+id/toolbarUnderLineView"
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:id="@+id/toolbarUnderLineView"
         android:background="#555555"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbayLayout" />
 
     <EditText
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintTop_toBottomOf="@id/toolbarUnderLineView"
-        android:layout_marginTop="16dp"
-        android:hint="글 제목"
-        android:id="@+id/titleEditText"
+        android:id="@+id/titleEt"
         android:layout_width="0dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="글 제목"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarUnderLineView" />
 
     <EditText
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:hint="가격"
-        app:layout_constraintTop_toBottomOf="@id/titleEditText"
-        android:id="@+id/priceEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/priceEt"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="가격"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleEt" />
 
     <Button
         android:id="@+id/imageAddBtn"
-        app:layout_constraintTop_toBottomOf="@id/photoIv"
-        app:layout_constraintStart_toStartOf="@id/photoIv"
-        app:layout_constraintEnd_toEndOf="@id/photoIv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:backgroundTint="#EFA844"
         android:text="이미지 등록하기"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintEnd_toEndOf="@id/photoIv"
+        app:layout_constraintStart_toStartOf="@id/photoIv"
+        app:layout_constraintTop_toBottomOf="@id/photoIv" />
 
     <ImageView
         android:id="@+id/photoIv"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="250dp"
-        android:layout_height="250dp"/>
+        android:layout_height="250dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
+        android:id="@+id/submitBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:id="@+id/submitButton"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#EFA844"
         android:text="등록하기"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:backgroundTint="#EFA844"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

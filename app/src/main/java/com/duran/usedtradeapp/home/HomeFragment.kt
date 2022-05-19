@@ -68,8 +68,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         // activity일떄는 그냥 this로 넘겼지만(그자체가 컨텍스트라서)
         // 그러나 프레그먼트의 경우 아래와같이 context
-        fragmentHomeBinding.articleRecyclerView.layoutManager = LinearLayoutManager(context)
-        fragmentHomeBinding.articleRecyclerView.adapter = articleAdapter
+        fragmentHomeBinding.articleRv.layoutManager = LinearLayoutManager(context)
+        fragmentHomeBinding.articleRv.adapter = articleAdapter
         fragmentHomeBinding.addFloatingBtn.setOnClickListener {
             context?.let {
                  //if(auth.currentUser != null) {
