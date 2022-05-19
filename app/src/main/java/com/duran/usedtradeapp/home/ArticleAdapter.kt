@@ -23,6 +23,7 @@ class ArticleAdapter : ListAdapter<ArticleModel, ArticleAdapter.ViewHolder>(diff
             binding.dateTv.text = format.format(date).toString()
             binding.priceTv.text = articleModel.price
 
+            // Glide로 이미지 불러오기
             if(articleModel.imageUrl.isNotEmpty()) {
                 Glide.with(binding.thumbnailIv)
                     .load(articleModel.imageUrl)

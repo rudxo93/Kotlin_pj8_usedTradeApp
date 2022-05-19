@@ -57,10 +57,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         Log.d("sslee", "onViewCreated")
 
         val fragmentHomeBinding = FragmentHomeBinding.bind(view)
-        articleList.clear()
+        articleList.clear() //리스트 초기화
         binding = fragmentHomeBinding
 
-        articleDB = Firebase.database.reference.child(DB_ARTICLES)
+        articleDB = Firebase.database.reference.child(DB_ARTICLES) // 디비 가져오기
 
         articleAdapter = ArticleAdapter()
 
@@ -70,13 +70,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         // 그러나 프레그먼트의 경우 아래와같이 context
         fragmentHomeBinding.articleRv.layoutManager = LinearLayoutManager(context)
         fragmentHomeBinding.articleRv.adapter = articleAdapter
-        fragmentHomeBinding.addFloatingBtn.setOnClickListener {
+        fragmentHomeBinding.addFloatingBtn.setOnClickListener { // 플로팅 버튼
             context?.let {
-                 //if(auth.currentUser != null) {
+                 //if(auth.currentUser != null) { 로그인 구현 후 주석 제거
                      val intent = Intent(it, AddArticleActivity::class.java)
                      startActivity(intent)
                  //} else {
-                     Snackbar.make(view, "로그인 후 사용해주세요", Snackbar.LENGTH_LONG).show()
+                 //    Snackbar.make(view, "로그인 후 사용해주세요", Snackbar.LENGTH_LONG).show()
                  //}
             }
         }

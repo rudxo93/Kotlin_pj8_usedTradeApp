@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16.18dp"
-            android:text="아이템 등록"
+            android:text="@string/add_article_top_Title"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -42,7 +42,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="글 제목"
+        android:hint="@string/add_article_item_Title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbarUnderLineView" />
@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="가격"
+        android:hint="@string/add_article_item_Price"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleEt" />
@@ -63,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#EFA844"
-        android:text="이미지 등록하기"
+        android:text="@string/add_article_add_Image"
         app:layout_constraintEnd_toEndOf="@id/photoIv"
         app:layout_constraintStart_toStartOf="@id/photoIv"
         app:layout_constraintTop_toBottomOf="@id/photoIv" />
@@ -85,7 +85,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#EFA844"
-        android:text="등록하기"
+        android:text="@string/add_article"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
