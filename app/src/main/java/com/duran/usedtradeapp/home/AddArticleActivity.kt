@@ -6,12 +6,10 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import com.duran.usedtradeapp.DBkey.Companion.DB_ARTICLES
 import com.duran.usedtradeapp.R
 import com.google.firebase.auth.FirebaseAuth
@@ -66,16 +64,62 @@ class AddArticleActivity : AppCompatActivity() {
 
         // 게시글 등록하기 버튼
         findViewById<Button>(R.id.submitBtn).setOnClickListener {
+            showProgress()
             // 입력된 값
             val title = findViewById<EditText>(R.id.titleEt).toString()
             val price = findViewById<EditText>(R.id.priceEt).toString()
             val sellerId = auth.currentUser?.uid.orEmpty()
-            // 모델 생성하기
-            val model = ArticleModel(sellerId, title, System.currentTimeMillis(), "${price}원", "")
-            // 데이터베이스 업로드
-            articleDB.push().setValue(model)
-            finish()
+            // 중간에 이미지가 있으면 업로드 과정 추가
+            if(selectedUri != null) {
+                val photoUri = selectedUri ?: return@setOnClickListener
+                uploadPhoto(photoUri,
+                    successHandler = {url -> // 다운로드 Url을 받아서 처리한다.
+                    uploadArticle(sellerId, title, price ,url)
+                },
+                errorHandler = {
+                    Toast.makeText(this, "사진 업로드 실패", Toast.LENGTH_SHORT).show()
+                    hideProgress()
+                })
+            } else {
+                uploadArticle(sellerId, title, price, "")
+                hideProgress()
+            }
         }
+    }
+
+    private fun hideProgress() {
+        findViewById<ProgressBar>(R.id.progressBar).isVisible = false
+    }
+
+    private fun showProgress() {
+        findViewById<ProgressBar>(R.id.progressBar).isVisible = true
+    }
+
+    private fun uploadPhoto(uri: Uri, successHandler: (String) -> Unit, errorHandler: () -> Unit) {
+        val fileName = "${System.currentTimeMillis()}.png"
+        storage.reference.child("article/photo").child(fileName)
+            .putFile(uri)
+            .addOnCompleteListener{
+                if(it.isSuccessful){ // 업로드 과정 완료
+                    // 다운로드 Url가져오기
+                    storage.reference.child("article/photo").child(fileName).downloadUrl
+                        .addOnSuccessListener { uri ->
+                            successHandler(uri.toString())
+                        }
+                        .addOnFailureListener {
+                            errorHandler()
+                        }
+
+                }
+            }
+    }
+
+    private fun uploadArticle(sellerId: String, title: String, price: String, imageUrl: String) {
+        val model = ArticleModel(sellerId, title, System.currentTimeMillis(), "${price}원", imageUrl)
+        // 데이터베이스 업로드
+        articleDB.push().setValue(model)
+        hideProgress()
+        finish()
     }
 
     // 교육용 팝업
