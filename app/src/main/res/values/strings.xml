@@ -10,6 +10,11 @@
     <string name="home_top_title">중고 거래</string>
     <!-- Home Fragment -->
 
+    <!-- MyPage Fragment -->
+    <string name="myPage_login_btn">로그인</string>
+    <string name="myPage_signUp_btn">회원가입</string>
+    <!-- MyPage Fragment -->
+
     <!-- add article activity -->
     <!-- add_article -> top title -->
     <string name="add_article_top_Title">아이템 등록</string>

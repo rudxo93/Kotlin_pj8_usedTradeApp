@@ -72,12 +72,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         fragmentHomeBinding.articleRv.adapter = articleAdapter
         fragmentHomeBinding.addFloatingBtn.setOnClickListener { // 플로팅 버튼
             context?.let {
-                 //if(auth.currentUser != null) { 로그인 구현 후 주석 제거
+                 if(auth.currentUser != null) {
                      val intent = Intent(it, AddArticleActivity::class.java)
                      startActivity(intent)
-                 //} else {
-                 //    Snackbar.make(view, "로그인 후 사용해주세요", Snackbar.LENGTH_LONG).show()
-                 //}
+                 } else {
+                     Snackbar.make(view, "로그인 후 사용해주세요", Snackbar.LENGTH_LONG).show()
+                 }
             }
         }
 
